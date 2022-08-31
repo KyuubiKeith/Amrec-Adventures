@@ -1,6 +1,6 @@
 {
-  "name": "application",
-  "version": "0.1.0",
+  "name": "amrec-adventures",
+  "version": "v0.0.1-beta",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.12.1",
+    "@reduxjs/toolkit": "^1.8.5",
+    "contentful": "^9.1.34",
+    "framer-motion": "^7.2.1",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.2",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
@@ -19,6 +26,8 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.7",
     "typescript": "4.8.2"
   }
 }
