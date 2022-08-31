@@ -1,0 +1,77 @@
+@use "../atoms" as *;
+@use '../organisms' as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#📋 {
+  transition: all 1s;
+
+  // ==================== Theme ====================//
+
+  &.☀️ {
+    background-color: var(--ignis);
+    color: var(--noctus);
+  }
+
+  &.🌑 {
+    background-color: var(--noctus);
+    color: var(--ignis);
+  }
+
+
+
+  // @media (prefers-color-scheme: dark) {
+  //   background-color: var(--noctus);
+  //   color: var(--ignis);
+
+  //   &.☀️ {
+  //     background-color: var(--ignis);
+  //     color: var(--noctus);
+  //   }
+
+  //   &.🌑 {
+  //     background-color: var(--noctus) !important;
+  //     color: var(--ignis);
+  //   }
+  // }
+
+  // ==================== Theme ====================//
+
+  // ===================== Main Grid =====================//
+
+  width: 100vw;
+  height: 100vh;
+
+  .noScroll {
+    overflow: hidden;
+  }
+
+
+  display: grid;
+
+  grid-template-areas: "🎩"
+  "📖"
+  "👣";
+
+  grid-template-rows: 1fr auto 1fr;
+
+  // @include media(">large-phone") {
+  //   grid-template-areas:
+
+  //     "⬅️ 📖 ➡️"
+  //     ". 👣 .";
+
+  //   grid-template-rows: 1fr auto 1fr;
+  //   grid-template-columns: 1fr 8fr 1fr;
+  // }
+
+  // ===================== Main Grid =====================//
+}

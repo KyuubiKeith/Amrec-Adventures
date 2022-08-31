@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
-// import ThemeToggle from '../../../../molecules/toggles/themeToggle'
+import ThemeToggle from '../../../../molecules/components/toggles/themeToggle'
 // import BrandMark from '../../../../atoms/abstracts/icons/Logo/brandMark'
 
 // ==================== Imports =====================//
@@ -24,9 +24,9 @@ const Header = () => {
     <header>
       <h3>Header Section</h3>
 
-      {/* <BrandMark />
+      {/* <BrandMark />*/}
 
-      <ThemeToggle /> */}
+      <ThemeToggle />
 
       <Link
         href={{
