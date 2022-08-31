@@ -13,7 +13,7 @@ import { useAppSelector } from '../context/state/hooks'
 import { TypePagesFields } from '../context/api/contentful'
 
 import Header from './navigation/header'
-import { Content } from './content'
+import Content  from './content'
 import Footer from './navigation/footer'
 
 
@@ -29,10 +29,6 @@ import Footer from './navigation/footer'
 
 // ==================== Render =====================//
 
-type _Content = {
-  children: ReactNode
-}
-
 const Layout: FC<PropsWithChildren> = ({children}) => {
   const { themeState } = useAppSelector((state: { theme: any }) => state.theme)
 
@@ -42,7 +38,7 @@ const Layout: FC<PropsWithChildren> = ({children}) => {
       className={themeState ? '🌑' : '☀️'}
     >
       <Header />
-      {children}
+      <Content>{children}</Content>
       <Footer />
     </section>
   )
