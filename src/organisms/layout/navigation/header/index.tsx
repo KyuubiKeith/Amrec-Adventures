@@ -8,8 +8,8 @@ import Link from 'next/link'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
-import ThemeToggle from '../../../../molecules/toggles/themeToggle'
-import BrandMark from '../../../../atoms/abstracts/icons/Logo/brandMark'
+// import ThemeToggle from '../../../../molecules/toggles/themeToggle'
+// import BrandMark from '../../../../atoms/abstracts/icons/Logo/brandMark'
 
 // ==================== Imports =====================//
 
