@@ -1,5 +1,8 @@
 // ==================== Imports =====================//
 
+// React
+import { FC, PropsWithChildren, ReactNode } from 'react'
+
 // NextJs
 import type { GetStaticProps } from 'next'
 
@@ -13,6 +16,7 @@ import Header from './navigation/header'
 import { Content } from './content'
 import Footer from './navigation/footer'
 
+
 // ==================== Imports =====================//
 
 
@@ -25,7 +29,11 @@ import Footer from './navigation/footer'
 
 // ==================== Render =====================//
 
-export default function Layout({children }: TypePagesFields) {
+type _Content = {
+  children: ReactNode
+}
+
+const Layout: FC<PropsWithChildren> = ({children}) => {
   const { themeState } = useAppSelector((state: { theme: any }) => state.theme)
 
   return (
@@ -34,10 +42,11 @@ export default function Layout({children }: TypePagesFields) {
       className={themeState ? '🌑' : '☀️'}
     >
       <Header />
-      <Content>{children}</Content>
+      {children}
       <Footer />
     </section>
   )
 }
 
+export default Layout;
 // ==================== Render =====================//
