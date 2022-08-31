@@ -1,0 +1,78 @@
+$fonts-path: "/Fonts/";
+
+/*==================== Display ====================*/
+
+/*  Tribeca */
+
+@font-face {
+  font-family: "Tribeca Regular";
+  src: url($fonts-path+"Display/Tribeca.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/*  Tribeca */
+
+/*==================== Display ====================*/
+
+
+
+/*==================== Serif ====================*/
+
+/* Means Web */
+
+@font-face {
+  font-family: "Means Web Light";
+  src: url($fonts-path+"Serif/Means-Light-Web.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Means Web */
+
+/*==================== Serif ====================*/
+
+/*==================== Sans Serif  ====================*/
+
+/* Circular Air Pro */
+
+@font-face {
+  font-family: "Circular Bold";
+  src: url($fonts-path+"Sans-Serif/CircularAirPro-Book-Bold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Book";
+  src: url($fonts-path+"Sans-Serif/CircularAirPro-Book.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Light";
+  src: url($fonts-path+"Sans-Serif/CircularAirPro-Light.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+/* Circular Air Pro */
+
+/*==================== Sans Serif  ====================*/
+
+
+
+
+
+
+
+
+
+
+

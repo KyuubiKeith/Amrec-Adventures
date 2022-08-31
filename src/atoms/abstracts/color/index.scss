@@ -1,0 +1,40 @@
+:root {
+
+  /* Brand Foundation */
+  --brand-hue: 30;
+  --brand-saturation: 48%;
+  --brand-lightness: 28%;
+
+
+  // --light-gray: var(--gray-0);
+  --dark-gray: var(--gray-6);
+
+
+  --ignis: var(--gray-0);
+  --noctus: var(--gray-9);
+
+
+  --solari: var(--yellow-5);
+  --lunari: var(--gray-4);
+
+  // --light-gray: hsl(0, 0%, 50%);
+  // --dark-gray: hsl(0, 0%, 50%);
+
+
+  // --ignis: hsl(0, 0%, 96%);
+  // --noctus: hsl(0, 0%, 1%);
+
+
+  // --solari: hsl(60, 100%, 50%);
+  // --lunari: hsl(0, 0%, 1%);
+
+
+  --brandColor: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+
+  --brandLight: hsl(calc(var(--brand-hue) - 1) var(--brand-saturation) calc(var(--brand-lightness) * 2));
+  --brandDark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5));
+
+
+  accent-color: var(--brandColor);
+
+}
