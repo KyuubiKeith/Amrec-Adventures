@@ -33,37 +33,29 @@ import { motion } from 'framer-motion'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   const { themeState } = useAppSelector((state: { theme: any }) => state.theme)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    loading
-      ? document.body.classList.add('loading')
-      : document.body.classList.remove('loading'),
-      themeState
-        ? document.body.classList.add('🌑')
-        : document.body.classList.add('☀️')
-  }, [loading, themeState])
+  const loading = useState(false)
 
   return (
     <section
       id="📋"
       className={themeState ? '🌑' : '☀️'}
     >
-      {loading ? (
-        <motion.div key={'loader'}>
-          <Loader setLoading={setLoading} />
+      <Header />
+      <Content>{children}</Content>
+      <Footer />
+      {!loading && (
+        <motion.div
+          className="transition-image final"
+          layoutId="banner"
+        >
+          <Image
+            alt="BlerdCorps | HavoxWorx Brand Icon"
+            src={'/Images/portrait.jpeg'}
+            width={100}
+            height={100}
+            className="brandMark"
+          />
         </motion.div>
-      ) : (
-        <>
-          <Header />
-          <Content>{children}</Content>
-          <Footer />
-          {!loading && (
-            <div className="transition-image final">
-              <BrandMark />
-            </div>
-          )}
-        </>
       )}
     </section>
   )

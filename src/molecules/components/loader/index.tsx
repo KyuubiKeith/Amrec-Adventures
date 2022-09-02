@@ -44,6 +44,21 @@ const item = {
     }
   }
 }
+
+const itemMain = {
+  hidden: {
+    opacity: 0,
+    y: 200
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6
+    }
+  }
+}
 // ==================== Variants =====================//
 
 //
@@ -52,13 +67,6 @@ const item = {
 // ==================== Render =====================//
 
 const Loader = ({ setLoading }: any) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 4000)
-    return () => clearTimeout(timer)
-  })
-
   return (
     <div className="loader">
       <motion.div
@@ -67,20 +75,25 @@ const Loader = ({ setLoading }: any) => {
         animate="show"
         exit="exit"
         className="loader-inner"
+        onAnimationComplete={() => setLoading(false)}
       >
         <ImageBlock
           variants={item}
           id="image-1"
         />
-        <div className="transition-image">
+        <motion.div
+          variants={itemMain}
+          className="transition-image"
+          layoutId='banner'
+        >
           <Image
             alt="BlerdCorps | HavoxWorx Brand Icon"
-            src={'/Images/logo.svg'}
+            src={'/Images/portrait.jpeg'}
             width={100}
             height={100}
             className="brandMark"
           />
-        </div>
+        </motion.div>
         <ImageBlock
           variants={item}
           id="image-3"
@@ -100,7 +113,10 @@ const Loader = ({ setLoading }: any) => {
 
 export const ImageBlock = ({ id, variants }: any) => {
   return (
-    <motion.div variants={variants} className={`image-block ${id}`}>
+    <motion.div
+      variants={variants}
+      className={`image-block ${id}`}
+    >
       <Image
         src={'/Images/logo.svg'}
         fallback={'/Images/logo.svg'}
