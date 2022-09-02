@@ -75,7 +75,7 @@ const Loader = ({ setLoading }: any) => {
         <div className="transition-image">
           <Image
             alt="BlerdCorps | HavoxWorx Brand Icon"
-            src={'/Images/portrait.jpeg'}
+            src={'/Images/logo.svg'}
             width={100}
             height={100}
             className="brandMark"
@@ -102,8 +102,8 @@ export const ImageBlock = ({ id, variants }: any) => {
   return (
     <motion.div variants={variants} className={`image-block ${id}`}>
       <Image
-        src={'/Images/portrait.jpeg'}
-        fallback={'/Images/portrait.jpeg'}
+        src={'/Images/logo.svg'}
+        fallback={'/Images/logo.svg'}
         alt="BlerdCorps | HavoxWorx Brand Icon"
       />
     </motion.div>

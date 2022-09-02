@@ -7,7 +7,7 @@ import type { AppProps } from 'next/app'
 import '../blerdCorps.scss'
 
 // Animation
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 //Redux
 import { store, persistor } from '..//organisms/context/state/store'
@@ -30,19 +30,21 @@ function Initium({ Component, pageProps, router }: AppProps) {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Layout>
-          <motion.div
-            key={router.route}
-            initial="pageInitial"
-            animate="pageAnimate"
-            variants={{
-              pageInitial: { opacity: 0 },
-              pageAnimate: { opacity: 1 }
-            }}
-          >
-            <Component {...pageProps} />
-          </motion.div>
-        </Layout>
+        <AnimatePresence>
+          <Layout>
+            <motion.div
+              key={router.route}
+              initial="pageInitial"
+              animate="pageAnimate"
+              variants={{
+                pageInitial: { opacity: 0 },
+                pageAnimate: { opacity: 1 }
+              }}
+            >
+              <Component {...pageProps} />
+            </motion.div>
+          </Layout>
+        </AnimatePresence>
       </PersistGate>
     </Provider>
   )

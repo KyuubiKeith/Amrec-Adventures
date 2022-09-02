@@ -18,6 +18,7 @@ import Content from './content'
 import Footer from './navigation/footer'
 import Loader from '../../molecules/components/loader'
 import BrandMark from '../../atoms/abstracts/icons/Logo/brandMark'
+import { motion } from 'framer-motion'
 
 // ==================== Imports =====================//
 
@@ -49,7 +50,9 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       className={themeState ? '🌑' : '☀️'}
     >
       {loading ? (
-        <Loader setLoading={setLoading} />
+        <motion.div key={'loader'}>
+          <Loader setLoading={setLoading} />
+        </motion.div>
       ) : (
         <>
           <Header />
