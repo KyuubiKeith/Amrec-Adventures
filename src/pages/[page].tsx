@@ -12,6 +12,9 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
 import { EntryCollection } from 'contentful'
 
+// Animation
+import { motion } from 'framer-motion'
+
 // ==================== Imports =====================//
 
 //
@@ -69,8 +72,25 @@ const Page: NextPage<TypePagesFields> = ({ page }) => {
 
   return (
     <>
-      <h1>{title}</h1>
-      <h4>{slug}</h4>
+      <motion.h1
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.4
+            }
+          }
+        }}
+      >
+        {title}
+      </motion.h1>
       <Link
         // href={`/projects/${project.slug}`}
         href={{

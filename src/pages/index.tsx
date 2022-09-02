@@ -8,6 +8,9 @@ import Link from 'next/link'
 import { Client, TypePagesFields } from '../organisms/context/api/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
+
+// Animation
+import { motion } from 'framer-motion'
 // ==================== Imports =====================//
 
 //
@@ -43,8 +46,25 @@ const Home: NextPage<TypePagesFields> = ({ page }) => {
   const { slug, title, pageContent } = page.fields
   return (
     <>
-      <h1>{title}</h1>
-      <h2>{slug}</h2>
+      <motion.h1
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.4
+            }
+          }
+        }}
+      >
+        {title}
+      </motion.h1>
       {documentToReactComponents(pageContent as Document)}
       <Link
         href={{
