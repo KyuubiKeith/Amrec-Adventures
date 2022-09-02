@@ -1,5 +1,8 @@
 // ==================== Imports =====================//
 
+// React
+import { useState, useEffect } from 'react'
+
 // NextJS
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -67,11 +70,79 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 //
 
 // ==================== Render =====================//
+
+const AnimatedLetters = ({ title }: any) => (
+  <span className="row-title">
+    {[...title].map((letter, index) => (
+      <span
+        className="row-letter"
+        key={index}
+      >
+        {letter}
+      </span>
+    ))}
+  </span>
+)
+
+const BannerRowTop = ({ title }: any) => {
+  return (
+    <div className={'banner-row'}>
+      <div className="row-col">
+        <AnimatedLetters title={title} />
+      </div>
+      <div className="row-col">
+        <span className="row-message">
+        Saying Yes to New Adventures
+        </span>
+      </div>
+    </div>
+  )
+}
+
+const BannerRowBottom = ({ title }: any) => {
+  return (
+    <div className={'banner-row center'}>
+      <div className="scroll">
+        <span>scroll</span>
+        <span>down</span>
+      </div>
+      <AnimatedLetters title={title} />
+    </div>
+  )
+}
+
+const BannerRowCenter = ({ title, playMarquee }: any) => {
+  return (
+    <div className={`banner-row marquee  ${playMarquee && 'animate'}`}>
+      <div className="marquee__inner">
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+      </div>
+    </div>
+  )
+}
+
 const Page: NextPage<TypePagesFields> = ({ page }) => {
   const { slug, title, pageContent } = page.fields
 
+  const [playMarquee, setPlayMarquee] = useState(false)
+
+  useEffect(() => {
+    setPlayMarquee(true)
+  }, [])
+
   return (
     <>
+      <div className="banner">
+        <BannerRowTop title={title} />
+        <BannerRowCenter
+          title={slug}
+          playMarquee={playMarquee}
+        />
+        <BannerRowBottom title={title} />
+      </div>
       <motion.h1
         initial="hidden"
         animate="visible"

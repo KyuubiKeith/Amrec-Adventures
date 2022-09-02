@@ -16,11 +16,6 @@ import type { GetStaticProps } from 'next'
 //
 
 // ==================== Render =====================//
-
-type _Content = {
-  children: ReactNode
-}
-
 const Content: FC<PropsWithChildren> = ({ children }) => {
   return <section>{children}</section>
 }

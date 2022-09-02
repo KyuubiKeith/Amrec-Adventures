@@ -47,21 +47,21 @@ html {
 
   // ===================== Main Grid =====================//
 
-  width: 100vw;
-  height: auto;
+  // width: 100vw;
+  // height: auto;
 
-  .noScroll {
-    overflow: hidden;
-  }
+  // .noScroll {
+  //   overflow: hidden;
+  // }
 
 
-  display: grid;
+  // display: grid;
 
-  grid-template-areas: "🎩"
-  "📖"
-  "👣";
+  // grid-template-areas: "🎩"
+  // "📖"
+  // "👣";
 
-  grid-template-rows: 1fr auto 1fr;
+  // grid-template-rows: 1fr auto 1fr;
 
   // @include media(">large-phone") {
   //   grid-template-areas:
